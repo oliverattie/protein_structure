@@ -56,10 +56,11 @@ foreach my $codon_x (@codons) {
 }
 open(HYDRO, "Hydrophobicity.txt");
 my $j=0;
+$_=<HYDRO>;
 while(<HYDRO>){
     my @data=split;
     $n_aa=@data;
-    for(my $i=0; $i<@data; $i++){
+    for(my $i=1; $i<@data; $i++){
     $hydro{$i}{$j}=10-$data[$i];
 #    print $n_aa." ".$i." ".$j." ".(10-$data[$i])."\n";
     }
